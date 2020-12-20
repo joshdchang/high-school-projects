@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Live Forecast | Josh's Weather Updates</title>
+        <link rel="stylesheet" href="./style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
+        <script>
+            var weather = {};
+            function doData(data){
+                weather = JSON.parse(data.entry.content.$t);
+                console.log(weather);
+            }
+
+            var now = new Date();
+            var startTime = now;
+            var startVal = 0;
+            var timeline;
+            var timestamp;
+            function doPrecipData(data){
+                timestamp = new Date(data.feed.entry[0].content.$t);
+                timeline = JSON.parse(data.feed.entry[1].content.$t);
+            }
+        </script>
+        <script src='https://spreadsheets.google.com/feeds/cells/1RhqbZ8lENE6uS2c03ieS6YaQJkTPFRLIP319B0mQO6s/1/public/values/R1C1?alt=json-in-script&callback=doData'></script>
+        <script src='https://spreadsheets.google.com/feeds/cells/1sigs4Bt9YS0GC5PQ1kK1KbzPKb9SC1uOFCYdoUvu6CA/1/public/values?alt=json-in-script&callback=doPrecipData'></script>
+    </head>
+    <body>
+        <div id='page-container'>
+            <p id='page-title'><span id='live'><span id='live-circle'></span>LIVE</span> Josh's forecast for Irvington, NY</p>
+            <div class='card' id='current-card'>
+                <div id='current-text'>
+                    <p id='current-temp'></p>
+                    <p id='current-conditions'></p>
+                </div>
+                <div id='align-right'>
+                    <img id='current-img' src="">
+                </div>
+                <p id='current-hilo' class='current-row'>High: <span id='current-high'>--</span> Low: <span id='current-low'>--</span></p>
+                <p id='current-wind' class='current-row'>Wind: <span id='wind-value'><span id='wind-direction'>--</span> <span id='wind-speed'>--</span> mph</span></span></p>
+                <p id='current-humidity' class='current-row'>Humidity: <span id='humidity-value'>--</span></p>
+            </div>
+            <div class='card' id='precip-card'>
+                <div class='card-title'>60 Minute Precip</div>
+                <div class='collapse-button-container'>
+                    <div onclick='collapsePrecip()' id='precip-button' class='collapse-button material-icons'>expand_less</div>
+                </div>
+                <div id='precip-container'>
+                    <div class="slidecontainer">
+                        <div id='slider-colors'></div>
+                        <input type="range" min="0" max="60" value="0" class="slider" id="precip-range">
+                    </div>
+                    <span onclick='precipBack()' id='arrow-back' class='precip-arrow material-icons'>arrow_back</span>
+                    <span id='precip-time'></span>
+                    <span onclick='precipForward()' id='arrow-forward' class='precip-arrow material-icons'>arrow_forward</span>
+                    <div id='precip-align-right'><span id='precip-rate'></span></div>
+                </div>
+            </div>
+            <div class='card' id='hourly-card'>
+                <div class='card-title'>Hourly Forecast</div>
+                <div class='collapse-button-container'>
+                    <div onclick='collapseHourly()' id='hourly-button' class='collapse-button material-icons'>expand_less</div>
+                </div>
+                <div id='hourly-container'>
+                    <span id='hourly-hours'></span>
+                    <div id='hourly-more' onclick='moreHours()'>Show more</div>
+                </div>
+            </div>
+            <div class='card' id='daily-card'>
+                <div class='card-title'>Daily Forecast</div>
+                <div class='collapse-button-container'>
+                    <div onclick='collapseDaily()' id='daily-button' class='collapse-button material-icons'>expand_less</div>
+                </div>
+                <div id='daily-container'>
+                    
+                </div>
+            </div>
+            <div id='footer'>
+                <p>© 2020 Josh Chang</p>
+                <p>This forecast is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranty of accuracy or fitness for a particular purpose.</p>
+                <p>Some weather data is provided by the National Weather Service, as well as by the Weather Channel.</p>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script  src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Josh Chang's Radar Model</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
+
+        <script>
+            var now = new Date();
+            var startTime = now;
+            var startVal = 0;
+            var timeline;
+            var timestamp;
+            function doPrecipData(data){
+                timestamp = new Date(data.feed.entry[0].content.$t);
+                timeline = JSON.parse(data.feed.entry[1].content.$t);
+            }
+        </script>
+        <script src='https://spreadsheets.google.com/feeds/cells/1sigs4Bt9YS0GC5PQ1kK1KbzPKb9SC1uOFCYdoUvu6CA/1/public/values?alt=json-in-script&callback=doPrecipData'></script>
+    </head>
+    <body>
+
+        <div id='page-container'>
+
+            <div id='title'>Josh Chang's <span style='color:#1e88e5'>Radar Model</span></div>
+
+            <div class='card'>
+                <div class='card-title'>About</div>
+                <div class='card-desc'>This model uses an algorithm based on weather radar data to extrapolate out precipitation for the next hour.</div>
+                <div id='details' class='card-desc'>
+                    <p class='details-section'>Architecture</p>
+                    <p>The model is run on a server in a JavaScript environment called Google Apps Script. The main advantages of this is that Google Apps Script programs are free, can be run on time-driven triggers, and can interact with Google services such as Google Sheets, which is useful for data storage. The model is run every 5 minutes, corresponding to the update cycle of the radar mosaic images.</p>
+                    <p class='details-section'>Data</p>
+                    <p>The model has just one data source: radar images. Specifically, the model uses sections of U.S. radar mosaics provided by the Iowa Environmental Mesonet. These images, which are actually GIS map overlay tiles, are provided in PNG format. Unfortunately, Apps Script does not have a built-in API for working with PNGs (such as the canvas API in web browsers), so the model includes a custom-built PNG parser function that intakes raw binary PNG data and outputs an array of RGB colors corresponding to the pixels of the image. Each element on this array is then compared against a key to covert it to an array of precip intensity.</p>
+                    <p class='details-section'>Algorithm</p>
+                    <p>Once the model is run, it begins by assembling radar mosaic data from the last 65 minutes in 5-minute increments. From this, a general precip direction and speed for the entire view is calculated for each consecutive increment, and then averaged together. Using the direction value, a line drawing algorithm is then used to create an array of precip intensity values going out from the pre-determined location. Then, certain precip intensity values are picked from the array based on the speed value to create a 60-minute prediction in 1-minute increments. This is then normalized using a rolling average and saved to a Google Sheet along with the time of the model run.</p>
+                    <p class='details-section'>Utility and Limitations</p>
+                    <p>The fact that the model is not an actual atmospheric simulation and instead a set of geometric algorithms based on radar data give it some distinct advantages, but also disadvantages. It is very easy and fast to run, so it has the ability to 'nowcast' unlike a traditional weather model, but it cannot in any way anticipate or account for the dynamic and chaotic atmosphere.</p>
+                    <p class='details-section'>Verification</p>
+                    <p>It is important to measure and track the accuracy of the model, which is why this website will soon include a number of metrics and charts for that purpose in the 'Verification' section. This is currently a work in progress.</p>
+                </div>
+                <div onclick='toggleDetails()' id='more-details'>More details...</div>
+            </div>
+
+            <div class='card'>
+                <div class='card-title'>Select Location</div>
+                <div id='location-options'>
+                    <div id='location-0' onclick='switchLocation(0)' class='location-option location-option-selected'>Irvington, NY</div>
+                    <div id='location-1' onclick='switchLocation(1)' class='location-option'>Longmont, CO</div>
+                </div>
+            </div>
+
+            <div class='card' id='precip-card'>
+                <div class='card-title'>Current Forecast</div>
+                <div class='slider-container'>
+                    <div id='slider-colors'></div>
+                    <input type='range' min='0' max='60' value='0' class='slider' id='precip-range'>
+                </div>
+                <span onclick='precipBack()' id='arrow-back' class='precip-arrow material-icons'>arrow_back</span>
+                <span id='precip-time'></span>
+                <span onclick='precipForward()' id='arrow-forward' class='precip-arrow material-icons'>arrow_forward</span>
+                <div id='precip-align-right'><span id='precip-rate'></span></div>
+            </div>
+
+            <div class='card'>
+                <div class='card-title'>Verification</div>
+                <div class='card-desc'>Coming soon...</div>
+            </div>
+
+            <div id='footer'>
+                © 2020 Josh Chang
+                <br><br>
+                This forecast is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranty of accuracy or fitness for a particular purpose.
+            </div>
+        </div>
+
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script  src="script.js"></script>
+    </body>
+</html>
