@@ -1,0 +1,178 @@
+html {
+background: rgb(54, 59, 61);
+}
+body {
+    text-align: center;
+    font-family: "Google Sans", sans-serif;
+    margin: 0;
+}
+
+#page-container {
+    display: inline-block;
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: calc(3vw + 5vh);
+}
+
+.biden {
+    background: #2196f3;
+    color: #2196f3;
+}
+.trump {
+    background: #ef5350;
+    color: #ef5350;
+}
+
+#title {
+    margin-top: calc(3vw + 4vh);
+    color: #f8f8f8;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#time {
+    margin-top: 20px;
+    color: #bdbdbd;
+    font-size: 1.2em;
+}
+
+#headline {
+    margin-top: calc(3vw + 5vh);
+    padding-left: 4%;
+    padding-right: 4%;
+}
+.headline-section {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: calc(1vw + 1vh);
+    box-shadow: rgb(34, 34, 34) 0px 2px 5px 0px;
+}
+.headline-chance {
+    background: #ffffff;
+    font-weight: 700;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+#bar {
+    height: 40px;
+    box-shadow: rgb(34, 34, 34) 0px 2px 5px 0px;
+}
+#biden-bar {
+    display: inline-block;
+    margin-right: -4.5px;
+    width: 75%;
+    height: 100%;
+}
+#trump-bar {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+}
+
+#map-container {
+    margin-top: calc(3vw + 5vh);
+    padding-left: 4%;
+    padding-right: 4%;
+}
+#info {
+    background: white;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: calc(3vw + 5vh);
+    padding: calc(16px + 1.4vw);
+    border-radius: calc(1vw + 1vh);
+    box-shadow: rgb(34, 34, 34) 0px 2px 5px 0px;
+}
+#label-title {
+    color: rgb(49, 49, 49);
+    font-size: 1.4em;
+    font-weight: 700;
+}
+#label-desc {
+    margin-top: 10px;
+    color: rgb(129, 129, 129);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+#chart {
+    margin-top: 20px;
+}
+#chart-canvas {
+    width: 100%;
+}
+#chart-canvas:hover {
+    cursor: crosshair;
+}
+
+#tooltip {
+    display: inline-block;
+    background: #eeeeee;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 7px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+#tooltip-date {
+    font-weight: 500;
+}
+.tooltip-chance {
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+#canvas-container {
+    position: relative;
+}
+#mouse-line {
+    position: absolute;
+    background: #424242;
+    width: 2px;
+    height: calc(100% - 30px);
+    top: 0;
+    left: calc(100% - 5px);
+}
+#mouse-line:hover {
+    cursor: crosshair;
+}
+
+.state {
+    stroke: #212121;
+    fill: white;
+    stroke-width: 0px;
+    stroke-linejoin: round;
+}
+path:hover {
+    cursor: crosshair;
+    stroke-width: 3px;
+}
+path.selected {
+    stroke: #ffd54f;
+    stroke-width: 7px;
+    z-index: 1;
+}
+
+#credits {
+    margin-top: calc(3vw + 4vh);
+    color: #bdbdbd;
+    font-size: 1.2em;
+}
+#home {
+    color: #42a5f5;
+}
