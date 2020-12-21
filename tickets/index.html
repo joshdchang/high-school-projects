@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Ticket</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+        <script> 
+            var spData = null;
+            var data = [];
+            function doData(json) {
+                spData = json.feed.entry;
+                for(var i = 0; i < spData.length; i++){
+                    data[i] = JSON.parse(spData[i].gs$cell.$t);
+                }
+            }
+        </script>
+        <script src="https://spreadsheets.google.com/feeds/cells/1hBSUmbe3Vqc3D_3zNaqTqFUiTlf4roKFA9AaCvMRkOc/1/public/values?alt=json-in-script&callback=doData"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1 class='print' id='print-header'>Make sure to have this QR Code visible when entering the Irvington Choice Awards.</h1><br class='print'>
+        <h1 class='valid' id='main-header'>Thanks for purchasing a ticket for the Irvington Choice Awards.</h1><br>
+        <p class='valid'>Print or bookmark this page to be shown at the door.</p><br class='valid'>
+        <h1 class='invalid' id='bad-header'>Invalid Link</h1><br class='invalid'>
+        <p class='invalid'>If you bought a ticket, try finding the original email and following the link provided.</p><br class='invalid'>
+        <br class="valid">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
+        <script  src="js/index.js"></script>
+    </body>
+</html>

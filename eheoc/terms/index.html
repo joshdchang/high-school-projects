@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Early Human Estuary Operations Center - Terms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Product+Sans:400,500,700" rel="stylesheet">
+<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+<script>
+  var spData = null;
+  var rows = [];
+  function doData(json) {
+    spData = json.feed.entry;
+    for(var i = 1; i < spData.length/2; i++){
+      rows[i - 1] = spData[i * 2].gs$cell.$t;
+    }
+  }
+</script>
+<script src="https://spreadsheets.google.com/feeds/cells/1fP1VVC89cqfPa8dLdcbEb2hEOTcXTQh9aNhUOAm2UvU/1/public/values?alt=json-in-script&callback=doData"></script>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1 id="title">Terms and Conditions</h1>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTwkIC0RDB0-01AAZHviFXiKZrNfXUhLAcibh2_vCHktYRNuTy-2FmOzj9oF__HRZRJamQ2QZMc2Zwo/pub?embedded=true"></iframe>
+</body>
+</html>

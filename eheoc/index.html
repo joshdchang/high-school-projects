@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Early Human Estuary Operations Center </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Product+Sans:400,500,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <script>
+      var spData = null;
+      var rows = [];
+      function doData(json) {
+        spData = json.feed.entry;
+        for(var i = 1; i < spData.length/2; i++){
+          rows[i-1] = spData[i*2].gs$cell.$t;
+        }
+      }
+    </script>
+    <script src="https://spreadsheets.google.com/feeds/cells/1fP1VVC89cqfPa8dLdcbEb2hEOTcXTQh9aNhUOAm2UvU/1/public/values?alt=json-in-script&callback=doData"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1 id="title">Early Human Estuary Operations Center</h1>
+    <i class="material-icons" id="blocked">block</i><br>
+    <a href="/eheoc/signin"><button id="in" class="elevation-4dp">Sign In</button></a><br>
+    <a href="/eheoc/signup"><button id="up" class="elevation-4dp">Create Account</button></a>
+    <script  src="js/index.js"></script>
+  </body>
+</html>

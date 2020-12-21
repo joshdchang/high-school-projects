@@ -1,0 +1,77 @@
+html {
+  text-align: center;
+  background: white;
+  font-family: "Google Sans";
+}
+#demo {
+  min-width: 300px;
+  margin-top: 30px;
+}
+#label {
+  min-width: 300px;
+}
+.in {
+  font-size: 40px;
+  font-weight: 400;
+  display: inline-block;
+  color: #616161;
+}
+.num {
+  font-size: 40px;
+  font-weight: 500;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  display: inline-block;
+  width: 19%;
+  height: 60px;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  background: #F44336;
+  color: #F5F5F5;
+  max-width: 100px;
+  min-width: 50px;
+}
+.sep {
+  display: inline-block;
+  color: #616161;
+  width: 10px;
+}
+.word {
+  font-size: 17px;
+  font-weight: 400;
+  display: inline-block;
+  width: 19%;
+  padding-top: 0px;
+  margin: 5px;
+  color: #212121;
+  max-width: 100px;
+  min-width: 50px;
+}
+#label {
+  margin-top: -18px;
+}
+h1 {
+  margin: 10px;
+  color: #424242;
+  min-width: 290px;
+  margin-top: 20px;
+  marhin-bottom: 30px;
+}
+.flag {
+  display: inline-block;
+  width: calc(75% + 60px);
+  margin: 5px;
+  max-width: 455px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  min-width: 290px;
+}
+.icon {
+  width: 25px;
+  vertical-align: middle;
+}
+.home {
+  color: #616161;
+  min-width: 290px;
+}

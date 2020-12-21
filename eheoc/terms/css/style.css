@@ -1,0 +1,23 @@
+html {
+	font-family: "Google Sans", "Roboto", sans-serif;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: 100%;
+  background: #212121;
+  text-align: center;
+  position: relative;
+}
+#title {
+  color: #FAFAFA;
+  text-align: center;
+  margin: 20px;
+  min-width: 250px;
+}
+iframe {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: calc(100% - 20px);
+  min-width: 250px;
+  max-width: 700px;
+  height: 500px;
+}

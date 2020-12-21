@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Early Human Estuary Operations Center - Signin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Product+Sans:400,500,700" rel="stylesheet">
+<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+<script> 
+var spData = null;
+var rows = [];
+  function doData(json) {
+    spData = json.feed.entry;
+    for(var i = 1; i < spData.length/2; i++){
+      rows[i - 1] = spData[i * 2].gs$cell.$t;
+    }
+  }
+</script>
+<script src="https://spreadsheets.google.com/feeds/cells/1fP1VVC89cqfPa8dLdcbEb2hEOTcXTQh9aNhUOAm2UvU/1/public/values?alt=json-in-script&callback=doData"></script>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1 id="title">Sign In</h1>
+<form>
+  Email:<br>
+  <input type="email" name="email" id="email"><br>
+  Password:<br>
+  <input type="password" name="password" id="password"><br>
+</form><br>
+<button onclick="submit()" id="submit" class="elevation-4dp">Submit</button>
+<p id="error"></p>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

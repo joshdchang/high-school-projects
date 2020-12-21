@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Early Human Estuary Operations Center - Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Product+Sans:400,500,700" rel="stylesheet">
+<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1 id="title">Create Account</h1>
+<form>
+  First name:<br>
+  <input type="text" name="firstname" id="first"><br>
+  Last name:<br>
+  <input type="text" name="lastname" id="last"><br>
+  Email:<br>
+  <input type="email" name="email" id="email"><br>
+  Password:<br>
+  <input type="password" name="password" id="password"><br>
+  <a href="/eheoc/terms" target="_blank">Terms and Conditions:</a><br>
+  <button type="button" onClick="document.getElementById('agree').innerHTML = 'Agreed';document.getElementById('agree').style.width = '80%';document.getElementById('disagree').style.display = 'none';document.getElementById('agree').style.background = '#C8E6C9';document.getElementById('agree').style.color = '#4CAF50';" id="agree" class="elevation-4dp">Agree</button>
+  <button type="button" onClick="window.location = './disagree'" id="disagree" class="elevation-4dp">Disagree</button>
+</form><br>
+<button onclick="submit()" id="submit" class="elevation-4dp">Submit</button>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
