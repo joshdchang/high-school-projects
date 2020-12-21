@@ -1,3 +1,3 @@
 # Josh's Projects
  
-* [Election Model](/election)
+* [2020 Election Model](/election)
