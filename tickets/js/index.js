@@ -9,8 +9,8 @@ if(search){
     var request = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
     if(request.num){
         if(request.num > 1){
-            $('#print-header').html('Make sure to have these QR Codes visible when entering the Irvington Choice Awards.');
-            $('#main-header').html('Thanks for purchasing tickets for the Irvington Choice Awards.');
+            $('#print-header').html('Make sure to have these QR Codes visible when entering the Event Name.');
+            $('#main-header').html('Thanks for purchasing tickets for the Event Name.');
         }
         for(var i = 0; i < request.num; i++){
             if(request['place' + i] && request['id' + i]){
