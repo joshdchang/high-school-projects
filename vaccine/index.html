@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>NY Vaccine Finder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html {
+                font-family: sans-serif;
+                color: #263238;
+            }
+            body {
+                padding: 30px;
+            }
+            li {
+                margin-bottom: 15px;
+            }
+            span {
+                background: #eeeeee;
+                padding: 0px 5px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>New York State Vaccine Appointment Finder</h1>
+        <h4>By Josh Chang</h4>
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Make sure you are using the <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox browser</a>.</li>
+            <li><a href='./add-on.xpi'>Download the add-on</a>.</li>
+            <li>Go to <a href='https://am-i-eligible.covid19vaccine.health.ny.gov/'>https://am-i-eligible.covid19vaccine.health.ny.gov/</a> and fill out the form to see if you are eligible.</li>
+            <li>Click on <span>"Schedule your vaccine appointment"</span> for the distribution location closest to you, even if it says <span>"No Appointments Available Currently"</span>.<br><b>THIS MAY BE BELOW LOCATIONS THAT ARE FURTHER FROM YOU BUT HAVE APPOINTMENTS AVAILABLE.</b></li>
+            <li>Complete any <span>"I am not a robot"</span> checks that may appear.</li>
+            <li>The add-on will reload until it finds an appointment in the next week, at which point it will change the name of the tab to <span>"Found!"</span>.</li>
+            <li>If you are available for the appointment, book it, otherwise go back to step 4 and try again.</li>
+            <li>If you encounter any errors, go back to step 4.</li>
+            <li>Enjoy!</li>
+        </ol>
+    </body>
+</html>
