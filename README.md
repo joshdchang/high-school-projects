@@ -1,9 +1,11 @@
-# Josh's Projects
+# Some projects I made in high school
+
+Note: some of these are broken now
  
-* [2020 Election Model](/election) - My statistical model of the 2020 election (it was right in all but 2 states)
-* [JEXOR Cipher](/jexor) - My own little (but quite secure) encryption algorithm for plain text
-* [Precipitation Model](/precip) - A model I made that predicts precip for the next hour in Irvington, NY based on radar outputs
-* [Sign-In UI Demo](/authtest) - A working demo of a sign-in user interface I made as an experiment
+* [2020 Election Model](https://joshdchang.github.io/election-model) - My statistical model of the 2020 election (it was right in all but 2 states)
+* [JEXOR Cipher](/jexor) - My own little encryption algorithm for plain text
+* [Precipitation Model](/precip) - A model I made that predicts precip for the next hour in Irvington, NY based on radar outputs (I don't think the server for this is working anymore)
+* [Sign-In UI Demo](/authtest) - A demo of a sign-in user interface I made as an experiment
 * [Weather Forecast UI Demo](/weathertexts/live) - A demo of a user interface displaying a weather forecast I made to test my design skills
 * [End of School Countdown (2019)](/school) - A fun little countdown I made near the end of the 2018-2019 school year
 * [Ticketing System](/tickets) - The web interface for a ticketing system I made (it will only work with a link for a valid ticket)
